@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import '../widgets/meal_item.dart';
-import '../dummy_data.dart';
 import '../models/meal.dart';
 
 
 class CategoryMealsScreen extends StatefulWidget {
   static const routeName = '/category-meals';
+  final List<Meal> availableMeals;
+  CategoryMealsScreen(this.availableMeals);
 
   @override
   _CategoryMealsScreenState createState() => _CategoryMealsScreenState();
@@ -29,7 +30,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
       final categoryId = routesArgs['id'];
       categoryTitle = routesArgs['title'];
       displayedMeals =
-          DUMMY_MEALS.where((meal) => meal.categories.contains(categoryId))
+          widget.availableMeals.where((meal) => meal.categories.contains(categoryId))
               .toList();
     }
     _loadedInitData = true;
