@@ -4,8 +4,6 @@ This application focuses on navigation and passing argument through constructors
 This application does not manage state with any state management tool and has not responsive behavior.
 
 
-bilal
-Tabs example code under favourite_screen code.
 
 
 
